@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function validate(){
+	var username = document.getElementById("userM").value;
+	var password = document.getElementById("passM").value;
+	if(username== ""){
+		alert("Please enter username to proceed");
+	}
+	else if(password== ""){
+		alert("Please enter password to proceed");
+	}
+	else if((username!= "") && (password!="")) 
+		{
+		
+		document.forms[0].action="register.jsp?username="+username+"&password="+password;
+		document.forms[0].method="post";
+		document.forms[0].submit();	
+		}
+	
+}
+</script>
+<style>
+body{
+width:100%;
+background:black;
+
+}
+form{
+	margin-top: 20%;
+    margin-left:40%;
+    font-size:20px;
+    color:white;
+}
+
+form input{
+	padding:5px;
+	margin:5px;
+}
+
+form table {
+	padding: 10px;
+    border: 5px;
+    margin: 10px;
+}
+form table #button{
+	padding:10px;
+	margin-top:25%;
+	background:antiquewhite;
+	font-weight:bold;
+	border: 1px solid antiquewhite;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<form method="post" >
+<table>
+	<tr>
+		<td>Username</td>
+		<td><input id="userM" type="text" name="username" placeholder="Name"/></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input id="passM" type="password" name="password" placeholder="password"/></td>
+	</tr>
+	<tr>
+		<td><input id="button" type="submit" value="Add Details"  onclick=validate() /></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
